@@ -37,7 +37,7 @@ DROPOUT = 0.1
 
 EPOCHS = 100
 
-tokenizer = tfds.features.text.SubwordTextEncoder.build_from_corpus(
+tokenizer = tfds.deprecated.text.SubwordTextEncoder.build_from_corpus(
     questions + answers, target_vocab_size=2**13)
 
 # Define start and end token to indicate the start and end of a sentence
@@ -526,6 +526,6 @@ def create_answer():
   
   
 if __name__ == "__main__":
-   flask_app.run(host='127.0.0.1', port=5000, debug=True)
+   flask_app.run(host='0.0.0.0', port=5000, debug=True)
 
 
